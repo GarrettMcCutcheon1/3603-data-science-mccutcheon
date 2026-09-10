@@ -43,3 +43,6 @@
 .* 
 !.gitignore
 !.git 
+
+# Local Python virtual environment
+.venv/
