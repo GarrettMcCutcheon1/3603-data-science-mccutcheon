@@ -23,7 +23,7 @@ My Answer: "<class 'int'>" prints to console.
 
 **3.** (Short Answer) What scalar type would best represent: a person's name, their age, and whether they passed a test?
 
-My Answer: A person's name would be represented by a string, their age by an int, and wheter they passed a test by a bool.
+My Answer: A person's name would be represented by a string, their age by an int, and whether they passed a test by a bool.
 
 **4.** (Code Tracing) What prints?
 ```python
@@ -151,9 +151,11 @@ else:
 print(tier, perk)
 ```
 
-My Answer: 
+My Answer: "Standard No perks yet" prints to console.
 
 **22.** (Short Answer, C++ Comparison) In C++, `0 <= score <= 100` compiles without any error, but doesn't check what you'd think. If `score = 150`, what does this condition actually evaluate to, and why?
+
+My Answer: The condition evaluates to "True". This happens because C++ evaluates 0 <= 150 first, which evaluates to true or 1. Then, C++ evaluates 1 <= 100, which is true. This causes the condition to evaluate to true.
 
 ---
 
