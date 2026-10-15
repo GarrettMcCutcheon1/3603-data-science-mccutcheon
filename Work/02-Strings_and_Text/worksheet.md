@@ -7,7 +7,7 @@ Use this worksheet to reinforce your understanding of strings — creating them,
 ## 🧠 Section 1: String Basics
 
 1. Why doesn't Python care whether you use `'...'` or `"..."`?  
-   `Answer:` _______________________
+   `Answer:` Both single and double quotes may be used to create strings. If you use one, the other may be used within the string without an escaping.
 
 2. What's the output of this code?
 
@@ -16,7 +16,7 @@ word = 'science'
 print(word[0:3])
 ```
 
-   `Answer:` _______________________
+   `Answer:` 'sci'
 
 3. Rewrite this string so it could be written with single quotes on the outside instead of double:
 
@@ -24,7 +24,7 @@ print(word[0:3])
 message = "She said \"don't stop\""
 ```
 
-   `Answer:` _______________________
+   `Answer:` message = 'She said "don\'t stop"'
 
 ---
 
@@ -36,6 +36,8 @@ message = "She said \"don't stop\""
 # Print the string reversed.
 ```
 
+print(course[16:20])
+
 ### ✏️ Task: Multi-Line String
 
 ```python
@@ -43,16 +45,23 @@ message = "She said \"don't stop\""
 # Print it.
 ```
 
+about_me = """I am an EE major. 
+I enjoy programming and working with electronics.
+I hope to learn about data science in this class."""
+print(about_me)
+
 ### 🤖 Explain It
 
 In your own words: why are strings immutable, and what do you actually have to do if you want a "modified" version of a string?
+
+Strings are immutable because their characters cannot be changed individually after the string is created. To modify a string, you can use various operations, like .lower, and save the result as a new string.
 
 ---
 
 ## 🔁 Section 2: String Methods
 
 4. What's the difference between `.strip()` and `.replace(' ', '')`?  
-   `Answer:` _______________________
+   `Answer:` .strip() removes whitespace from the beginning and end of string, while .replace(' ', '') removes every space throughout the string including spaces between words.
 
 5. What will this print?
 
@@ -61,10 +70,10 @@ name = "  ADA lovelace  "
 print(name.strip().title())
 ```
 
-   `Answer:` _______________________
+   `Answer:` 'Ada Lovelace'
 
 6. If `words = "red,green,blue".split(',')`, what is `words`, and what type is it?  
-   `Answer:` _______________________
+   `Answer:` ['red', 'green', 'blue'], which is a list of strings.
 
 ---
 
@@ -76,6 +85,9 @@ print(name.strip().title())
 # Print True or False.
 ```
 
+cleaned = raw_input.strip().lower()
+print(cleaned == 'yes')
+
 ### ✏️ Task: Build a Sentence
 
 ```python
@@ -84,16 +96,21 @@ print(name.strip().title())
 # Then use .replace() to change "fun" to "powerful" in the result.
 ```
 
+sentence = ' '.join(words)
+print(sentence.replace('fun', 'powerful'))
+
 ### 🤖 Explain It
 
 In your own words: what's the difference between a method like `.upper()` that returns a new string, versus a list method like `.append()` that changes the list in place? Why do strings only work the first way?
+
+.upper() returns a new string without changing the original. Strings are immutable and cannot be changed, but lists are changeable and can be modified in place.
 
 ---
 
 ## 🎯 Section 3: Formatted Strings
 
 7. What does the format spec `:.2f` do?  
-   `Answer:` _______________________
+   `Answer:` It formats a number as a decimal with two digits after the decimal point shown.
 
 8. What will this print?
 
@@ -103,10 +120,10 @@ qty = 5
 print(f"You bought {qty} {item}(s)")
 ```
 
-   `Answer:` _______________________
+   `Answer:` 'You bought 5 eraser(s)'
 
 9. Why might you use an f-string instead of `+` to build a string out of variables?  
-   `Answer:` _______________________
+   `Answer:` f-strings make it easy to combine text and variables in on line.
 
 ---
 
@@ -118,6 +135,8 @@ print(f"You bought {qty} {item}(s)")
 # (Notice price needs rounding — that's what :.2f is for.)
 ```
 
+print(f"{qty}x {item} @ ${price:.2f} = ${price * qty:.2f}")
+
 ### ✏️ Task: Aligned Table
 
 ```python
@@ -126,9 +145,14 @@ print(f"You bought {qty} {item}(s)")
 # so they all line up on the right edge.
 ```
 
+for name in names:
+    print(f"{name:>15}")
+
 ### 🤖 Explain It
 
 In your own words: what's the practical difference between `f'{price}'` and `f'{price:.2f}'` when `price = 19.999999`? When would the difference actually matter in real code?
+
+f'{price}' displays the number fully, while f'{price:.2f}' displays it to two decimal places. Two decimal places are useful for prices and receipts because they make monetary amounts easier to read.
 
 ---
 
