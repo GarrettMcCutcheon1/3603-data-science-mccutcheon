@@ -10,6 +10,8 @@ Try every question on your own first. The Answer Key is at the bottom, so don't 
 
 **1.** (Short Answer) Why is `scores = [87, 91, 74]` better than `score1 = 87`, `score2 = 91`, `score3 = 74`? Give two reasons.
 
+A list groups related scores together in one variable. It also makes it easier to process all the scores using loops and built-in functions.
+
 **2.** (Code Tracing) What prints?
 ```python
 scores = [87, 91, 74, 88, 95]
@@ -17,14 +19,21 @@ scores.append(60)
 scores.remove(91)
 print(scores[1], scores[-1], len(scores))
 ```
+74 60 5
 
 **3.** (Multiple Choice) Which container fits "Student ID → GPA" best?
 A) list  B) tuple  C) dictionary  D) set
 
+C
+
 **4.** (Multiple Choice) Which container fits "an RGB color" best?
 A) list  B) tuple  C) dictionary  D) set
 
+B
+
 **5.** (Short Answer) Give a better description of a tuple than "an immutable list."
+
+A tuple is an ordered collection of values that are usually grouped together as one unit.
 
 **6.** (Code Tracing) What prints?
 ```python
@@ -32,6 +41,7 @@ a = {"OOP", "Database", "Algorithms"}
 b = {"Database", "Networks"}
 print(a & b)
 ```
+{'Database'}
 
 **7.** (Code Tracing) Evaluate one step at a time. What is the value?
 ```python
@@ -41,12 +51,15 @@ students = [
 ]
 students[-1]["name"][0]
 ```
+'B'
 
 ---
 
 ## Section B — Patterns
 
 **8.** (Short Answer) Accumulate and Count both start at `0`. What's the difference in how they update?
+
+Accumulate adds values to a running total, while Count tracks how many items or occurrences there are.
 
 **9.** (Code Tracing) What prints?
 ```python
@@ -57,11 +70,16 @@ for n in nums:
         x.append(n)
 print(x)
 ```
+[-2, -5]
 
 **10.** (Multiple Choice) Which pattern is question 9?
 A) Accumulate  B) Count  C) Filter  D) Best So Far
 
+C
+
 **11.** (Short Answer) When finding the maximum with the Best So Far pattern, why should `best` start at the first item instead of `0`?
+
+best should start at the first item because all the numbers could be negative, making zero an incorrect maximum.
 
 ---
 
@@ -72,8 +90,11 @@ A) Accumulate  B) Count  C) Filter  D) Best So Far
 def square(x):
     return x * x
 ```
+Nothing prints because the code only defines the function and does not call it.
 
 **13.** (Short Answer) In `def area(width, height):` and `area(3, 5)`, which are the parameters and which are the arguments?
+
+The parameters are width and height, and the arguments are 3 and 5.
 
 **14.** (Code Tracing) What prints?
 ```python
@@ -82,6 +103,7 @@ def square(x):
 
 print(square(3) + square(square(2)))
 ```
+25
 
 **15.** (Code Tracing) What prints? (Careful!)
 ```python
@@ -91,8 +113,12 @@ def double(x):
 result = double(5)
 print(result)
 ```
+10
+None
 
 **16.** (True/False) `print()` gives a value back to the program so it can be used in later calculations.
+
+False. print() displays a value, while return sends a value back to the calling code.
 
 **17.** (Code Tracing) What prints?
 ```python
@@ -102,8 +128,11 @@ def check(x):
 
 print(check(1))
 ```
+big
 
 **18.** (Short Answer) Give three reasons functions are useful *besides* avoiding copy/paste.
+
+Functions organize code into smaller sections, make testing and debugging easier, and allow programmers to reuse functionality without knowing every implementation detail.
 
 ---
 
@@ -117,6 +146,7 @@ def total(numbers):
         result += n
         return result
 ```
+The return statement is indented too far inside the loop, so the function returns after processing only the first number. Move return result outside the loop.
 
 **20.** (Code Tracing) What prints?
 ```python
@@ -128,6 +158,7 @@ a = [5]
 b = add_one(a)
 print(a)
 ```
+[5, 1]
 
 **21.** (Code Tracing) What prints?
 ```python
@@ -135,11 +166,17 @@ nums = [3, 1, 2]
 x = nums.sort()
 print(x, nums)
 ```
+None [1, 2, 3]
 
 **22.** (Multiple Choice) `frequency(["a", "b", "a"])` from Notebook 05 turns a list into a...
 A) number  B) bool  C) list  D) dictionary
+D
 
 **23.** (Short Answer) Write the contract (IN / OUT / DOES) for a function `count_above(numbers, threshold)`.
+
+IN: A list of numbers and a threshold.
+OUT: The number of values greater than the threshold.
+DOES: Counts how many numbers are strictly greater than the threshold without changing the original list.
 
 **24.** (Code Tracing) Given the functions from Notebook 06, what prints?
 ```python
@@ -147,3 +184,4 @@ numbers = [10, -3, 20, 30]
 clean = remove_negatives(numbers)
 print(above(clean, average(clean)))
 ```
+[30]

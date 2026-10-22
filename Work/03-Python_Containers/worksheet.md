@@ -7,10 +7,10 @@ Use this worksheet to review and reinforce your understanding of Python's core d
 ## 🧠 Section 1: Lists
 
 1. What method adds an item to the end of a list?  
-   `Answer:` ____________________________
+   `Answer:` .append() adds an item to the end of a list.
 
 2. How can you remove an item from a list by value? By position?  
-   `Answer:` ____________________________
+   `Answer:` .remove() can be used to remove an item from a list by value, while .pop() can be used to remove an item by position.
 
 3. What's the result of this code?
 
@@ -20,19 +20,19 @@ nums.append(8)
 print(nums)
 ```
 
-   `Answer:` ____________________________
+   `Answer:` [2, 4, 6, 8]
 
 4. What does `my_list[1:4]` return, given `my_list = [10, 20, 30, 40, 50]`?  
-   `Answer:` ____________________________
+   `Answer:` [20, 30, 40]
 
 4a. Given `a = [1, 2]` and `b = [3, 4]`, what is the result of `a + b`? Of `a.append(b)`? Of `a.extend(b)`?  
-   `Answer:` ____________________________
+   `Answer:` a + b = [1, 2, 3, 4, 5], a.append(b) = [1, 2, [3, 4]], a.extend(b) = [1, 2, 3, 4]
 
 4b. Given `grid = [[1, 2], [3, 4]]`, how do you access the value `3`?  
-   `Answer:` ____________________________
+   `Answer:` grid[1][0]
 
 4c. List three different ways to remove an item from a list.  
-   `Answer:` ____________________________
+   `Answer:` .remove(value), .pop(index), del list[index]
 
 ---
 
@@ -44,6 +44,10 @@ print(nums)
 # Remove one item and print the list.
 ```
 
+fav_foods = ['My mom\'s pot roast', 'Grilled Teriyaki Chicken Rice Bowl', 'Pork Tonkotsu Ramen']
+fav_foods.append('My Grandma\'s pan fried porkchops')
+fav_foods.pop(2)
+
 ### ✏️ Task: Slicing and Sorting
 
 ```python
@@ -53,6 +57,10 @@ print(nums)
 # 3. Print the numbers sorted from largest to smallest.
 ```
 
+print(numbers[0:3])
+print(sorted(numbers))
+print(sorted(numbers, reverse=True))
+
 ### ✏️ Task: Filtering
 
 ```python
@@ -60,6 +68,10 @@ print(nums)
 # Build a new list called "hot" containing only temps over 85.
 # Print "hot".
 ```
+
+hot = [temp for temp in temps if temp > 85]
+
+print(hot)
 
 ### ✏️ Task: Combine Lists Three Ways
 
@@ -71,6 +83,15 @@ print(nums)
 #    Notice how many items the list has now, and why.
 # 3. On another fresh copy, use .extend(extras) and print the result.
 ```
+
+breakfast = morning + extras
+print(breakfast)
+breakfast = morning
+breakfast.append(extras)
+print(breakfast)
+breakfast = morning
+breakfast.extend(extras)
+print(breakfast)
 
 ### ✏️ Task: 2D List (grid)
 
@@ -108,18 +129,21 @@ print(nums)
 
 In your own words: what's the difference between a list and a slice of a list? Is slicing a list the same as modifying it? And when you write `a.append(b)` versus `a.extend(b)`, what ends up in `a` each way?
 
+A list is the actual collection of values. A slice is a new list containing a selected portion of the original list. Slicing does not modify the orignal list. a.append(b) will add the list, b, inside of the list a,
+while a.extend(b) will add the items in b to a starting at the end of a. 
+
 ---
 
 ## 🔒 Section 2: Tuples
 
 5. What is a key difference between a list and a tuple?  
-   `Answer:` ____________________________
+   `Answer:` Lists are mutable, while tuples are immutable.
 
 6. Can you change the contents of a tuple once it is created? Why or why not?  
-   `Answer:` ____________________________
+   `Answer:` No; tuples are immutable.
 
 7. What does `first, *rest = (10, 20, 30, 40)` assign to `first` and `rest`?  
-   `Answer:` ____________________________
+   `Answer:` first = 10, rest = [20, 30, 40]
 
 ---
 
@@ -150,24 +174,27 @@ In your own words: what's the difference between a list and a slice of a list? I
 
 In your own words: why does Python allow a tuple to be a dictionary key, but not a list? What property makes that possible?
 
+Python allows a tuple to be a dictionary key because tuples are immutable, so, if a tuple contains hashable values, they can be used as keys.
+Lists are mutable and unhashable, so they cannot be used.
+
 ---
 
 ## 🔑 Section 3: Dictionaries
 
 8. What does the `.get()` method do differently from accessing a key directly with `[]`?  
-   `Answer:` ____________________________
+   `Answer:` The .get() method retrieves a value without creating an error if the key is missing, while [] raises an error if there is no key.
 
 9. How do you loop through both keys and values in a dictionary?  
-   `Answer:` ____________________________
+   `Answer:` Use .items().
 
 10. How would you remove a key from a dictionary and also capture the value it held?  
-    `Answer:` ____________________________
+    `Answer:` Use .pop().
 
 11. In a list of dictionaries like `people = [{'name': 'Ana'}, {'name': 'Ben'}]`, how do you get Ben's name?  
-    `Answer:` ____________________________
+    `Answer:` Use people[1]['name'].
 
 12. If the same dictionary object is stored in both a list and another dictionary, and you change it through one, does the other see the change? Why?  
-    `Answer:` ____________________________
+    `Answer:` Yes; If both locations reference the same object, changing the dictionary through one reference changes what is seen in the other.
 
 ---
 
@@ -225,6 +252,9 @@ In your own words: why does Python allow a tuple to be a dictionary key, but not
 ### 🤖 Explain It
 
 In your own words: what's the difference between `student['gpa']` and `student.get('gpa')` when `'gpa'` isn't in the dictionary? Which would you use, and when? Also: why does changing `by_row[2]` also change `roster[2]`?
+
+If 'gpa' isn't in the dictionary, student['gpa'] produces a KeyError, while student.get('gpa') simply returns 'None'. I would use [] when the key should exist and its absence indicates an error, 
+and I would use .get() when the key may not exist.
 
 ---
 
