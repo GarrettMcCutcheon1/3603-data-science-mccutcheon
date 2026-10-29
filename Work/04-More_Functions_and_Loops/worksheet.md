@@ -19,6 +19,8 @@ What does each call return?
 4. `price(discount=5, amount=20)` → ____________________________
 
 > 🤖 **Explain It:** Why are keyword arguments easier to read than positional ones in a call like `price(100, 0, 10)`?
+Keyword arguments are easier to read because they make it clear what each value represents without having to remember the order of the parameters. 
+In the example 'price(100, 0, 10), one can achieve the same result with 'price(discount=10, amount=100, tax=0).
 
 ---
 
@@ -40,6 +42,8 @@ print(count, result)
 `Answer:` ____________________________
 
 > 🤖 **Explain It:** Describe the "room with two doors" model of a function in your own words.
+A function is like a room with its own variables seperate from global variables. Parameters let information enter through one 'door', while return 
+statements let information leave through another 'door'.
 
 ---
 
@@ -97,3 +101,5 @@ Tom,cat
    `Answer:` ____________________________
 
 > 🤖 **Explain It:** When is `try` / `except` a good idea, and when does it just hide bugs?
+'try' / 'except' is useful when an error is possible, but it is not detrimental to the rest of the program. It just hides bugs when
+unexpected errors are concealed without the underlying problem being known.
