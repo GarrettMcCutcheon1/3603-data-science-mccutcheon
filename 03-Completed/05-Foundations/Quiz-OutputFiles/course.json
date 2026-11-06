@@ -1,0 +1,10 @@
+{
+  "course": "History 101",
+  "instructor": "Dr. Smith",
+  "credits": "3",
+  "topics": [
+    "Ancient Civilizations",
+    "Medieval Europe",
+    "Modern History"
+  ]
+}
