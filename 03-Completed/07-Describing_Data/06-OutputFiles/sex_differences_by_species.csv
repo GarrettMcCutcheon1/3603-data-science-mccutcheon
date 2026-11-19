@@ -1,0 +1,4 @@
+species,n_male,n_female,mass_diff_g,flipper_diff_mm,bill_depth_diff_mm
+Adelie,73,73,674.66,4.62,1.45
+Chinstrap,34,34,411.76,8.18,1.66
+Gentoo,61,58,805.09,8.83,1.48
